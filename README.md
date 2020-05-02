@@ -7,4 +7,5 @@ This week I choose to build a simple blog, where key features include I can crea
 {View the demo application here}[#]
 
 * Ruby 2.6.5
+* PostgreSQL
 
