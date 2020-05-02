@@ -1,0 +1,16 @@
+<h2 class="title is-2">All Posts</h2>
+
+<div class="buttons">
+  <button class="button is-primary is-rounded is-normal">
+    <%= link_to "Add new posts", new_post_path %>
+</button>
+</div>
+
+<% @posts.each do |post| %>
+<p class="subtitle is-4">
+  <%= link_to post.title, post_path(post) %>
+</p>
+<p>
+  <%= post.content %>
+</p>
+<% end %>
