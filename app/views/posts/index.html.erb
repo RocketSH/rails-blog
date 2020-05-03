@@ -1,10 +1,7 @@
+<section class="section">
 <h2 class="title is-2">All Posts</h2>
 
-<div class="buttons">
-  <button class="button is-primary is-rounded is-normal">
-    <%= link_to "Add new posts", new_post_path %>
-</button>
-</div>
+    <%= link_to "Add new posts", new_post_path, class: "button is-primary is-rounded" %>
 
 <% @posts.each do |post| %>
 <p class="subtitle is-4">
@@ -14,3 +11,4 @@
   <%= post.content %>
 </p>
 <% end %>
+</section>
