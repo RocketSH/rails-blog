@@ -8,7 +8,10 @@
 
 <% @posts.each do |post| %>
 <p class="subtitle is-4">
-  <%= link_to post.title, post_path(post) %>
+  <%= link_to post.title, post %>
+</p>
+<p>
+  <%= post.created_at.strftime("%B, %d, %Y") %>
 </p>
 <p>
   <%= post.content %>
