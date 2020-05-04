@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'carrierwave', '~> 2.1'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem "fog-aws"
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'gravtastic', '~> 3.2', '>= 3.2.6'
 
 group :development, :test do
