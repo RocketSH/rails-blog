@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :destroy]
 
->>>>>>> Stashed changes
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -21,10 +20,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
-    @post = Post.find(params[:id])
+  def update
+
     if @post.update(post_params)
       redirect_to @post, data: { confirm: "Ready to update this post?"}, notice: "This post has been update."
 
@@ -34,7 +33,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def destroy
@@ -47,4 +45,9 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content)
   end
 
+  def find_post
+    @post = Post.find(params[:id])
+    rescue 
+    redirect_to posts_path, notice: "Sorry, we can not find this post."  
+  end
 end

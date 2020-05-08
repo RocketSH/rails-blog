@@ -1,31 +1,17 @@
 <section class="section">
-
 <h2 class="title is-2">All Posts</h2>
-    <%= link_to "Add new posts", new_post_path, class: "button is-primary is-rounded" %>
+<%= link_to "Add new posts", new_post_path, class: "button is-primary is-rounded" %>
 
 <% @posts.each do |post| %>
 <div class="card">
-
-  <header class="card-header">
-    <p >
-      <%= link_to post.title, post, class:"card-header-title" %>
-    </p>
+ <header class="card-header">
+    <%= link_to post.title, post, class:"card-header-title" %>
   </header>
   <div class="card-content">
     <div class="content">
       <%= link_to post.content %>
     </div>
-  </div>
-
-
-<% @posts.each do |post| %>
-<p class="subtitle is-4">
-  <%= link_to post.title, post %>
-</p>
-<p>
   <%= post.created_at.strftime("%B, %d, %Y") %>
-</p>
-<p>
-  <%= post.content %>
-</p>
+  </div>
 <% end %>
+</section>
