@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: [:edit, :update, :show, :destroy]
+
+>>>>>>> Stashed changes
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -21,9 +24,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def update
     @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to @post, data: { confirm: "Ready to update this post?"}, notice: "This post has been update."
 
@@ -37,8 +38,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-
     @post.destroy if @post
     redirect_to root_path, notice: "This post has been delete."
   end
