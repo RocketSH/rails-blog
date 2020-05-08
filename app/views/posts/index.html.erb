@@ -1,10 +1,22 @@
-<h2 class="title is-2">All Posts</h2>
+<section class="section">
 
-<div class="buttons">
-  <button class="button is-primary is-rounded is-normal">
-    <%= link_to "Add new posts", new_post_path %>
-</button>
-</div>
+<h2 class="title is-2">All Posts</h2>
+    <%= link_to "Add new posts", new_post_path, class: "button is-primary is-rounded" %>
+
+<% @posts.each do |post| %>
+<div class="card">
+
+  <header class="card-header">
+    <p >
+      <%= link_to post.title, post, class:"card-header-title" %>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <%= link_to post.content %>
+    </div>
+  </div>
+>>>>>>> Stashed changes
 
 <% @posts.each do |post| %>
 <p class="subtitle is-4">
