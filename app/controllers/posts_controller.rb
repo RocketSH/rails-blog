@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:edit, :update, :show, :destroy]
+  before_action :find_post, only:[:edit, :update, :show, :destroy]
+
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to posts_path, notice: "Sorry, we can not find this post."  
+  end
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.order(created_at: :DESC)
   end
 
   def new
@@ -47,7 +51,6 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
-    rescue 
-    redirect_to posts_path, notice: "Sorry, we can not find this post."  
+    
   end
 end
